@@ -1,0 +1,90 @@
+{% extends 'main.html' %}
+{% block content %}
+    {% include 'navbar.html' %}
+
+    <section style="margin-top: 5rem">
+        <div class="container">
+            <div class="row py-5">
+                <div class="col-md-2 pt-5">
+                    <p class="d-md-flex d-none d-sm-none px-5" style="transform: rotate(90deg);">
+                        <a href="#" class="text-decoration-none nav-link p-3">Instagram</a>
+
+                        <a href="#" class="text-decoration-none nav-link p-3">Facebook</a>
+
+                        <a href="#" class="text-decoration-none nav-link p-3">X</a>
+                    </p>
+                </div>
+
+                <div class="col-md-7 col-sm-11 col-11 p-3 mx-auto">
+                    <h1 class="fw-bolder display-2 text-white">Lorem ipsum dolor sit amet, consectetur adipisicing.</h1>
+
+                    <h4 class="fw-bold mt-5" style="font-size: 16px;letter-spacing: 1px; color: #CFCFCF">EMAIL US</h4>
+                    <p style="font-size: 18px; color: #CFCFCF">info@picassoeventos.com</p>
+
+                    <h4 class="fw-bold mt-5" style="font-size: 16px;letter-spacing: 1px; color: #CFCFCF">CALL</h4>
+                    <p style="font-size: 18px; color: #CFCFCF">+258 XX XXX XXXX</p>
+
+
+                      <form method="post" action="">
+
+                    {% csrf_token %}
+
+                    <div class="row justify-content-center my-5">
+
+                        <div class="col-sm-8 text-black mb-5">
+                            <div class="d-flex align-items-center" >
+
+                                <div style="width: 38rem;">
+
+                                    <div class="row mt-4">
+                                        <div class="col">
+                                            <!-- Name input -->
+                                            <div data-mdb-input-init class="form-outline">
+                                                <label class="form-label" for="name" style="color: #CFCFCF">Your Name</label>
+                                                <input type="text" name="name" id="name" class="form-control rounded-0" />
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <!-- Email input -->
+                                            <div data-mdb-input-init class="form-outline">
+                                                <label class="form-label" for="email" style="color: #CFCFCF">Email Adress</label>
+                                                <input type="email" name="email" id="email" class="form-control rounded-0" />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row mt-4">
+                                        <div class="col">
+                                            <!-- mobile input -->
+                                            <div data-mdb-input-init class="form-outline">
+                                                <label class="form-label" for="mobile" style="color: #CFCFCF">MOBILE NUMBER</label>
+                                                <input type="tel" name="mobile" id="mobile" class="form-control rounded-0" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-4">
+                                        <div>
+                                            <label for="exampleFormControlTextarea1" class="form-label" style="color: #CFCFCF">Textarea</label>
+                                            <textarea class="form-control rounded-0" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-sm-8 text-center">
+                            <button class="btn btn-tickets" name="submit" type="submit">Send Message <i class="ri-arrow-right-s-line"></i></button>
+                        </div>
+
+                    </div>
+                </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+{% endblock %}

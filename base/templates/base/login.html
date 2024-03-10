@@ -1,0 +1,63 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block content %}
+<main>
+
+{% include 'navbar.html' %}
+
+
+        <section class="vh-100" style="margin-top: 4.7rem">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-4 px-0 d-none d-sm-block">
+                        <img src="{% static 'images/bg_1.jpg' %}"
+                             alt="Login image" class="w-100 vh-100" style="object-fit: cover; object-position: left;">
+                    </div>
+                    <div class="col-sm-8 text-black" style="background: #F1F5F9">
+
+
+                        <div class="d-flex align-items-center mt-5 pt-5" >
+
+                            <form style="width: 38rem; background: #fff; border-top: #554cc7 solid 5px;" class="mx-auto p-5" action="" method="post">
+                                {% csrf_token %}
+
+
+                                <div class="form-outline mb-4">
+                                    <h6>My Picasso Eventos Account</h6>
+                                    <p class="text-muted">
+                                        With your Picasso Eventos Account you will be able to Pre-Register for Ticket Sales and stay up-to-date on all Picasso Eventos related news. You can check or change your personal info at any time.
+                                    </p>
+                                </div>
+
+                                <p class="text-muted">Sign in to your Picasso Eventos Account</p>
+
+                                <div class="form-outline my-4">
+                                    <input type="text" id="username" name="username" class="form-control form-control-lg rounded-0" />
+                                    <label class="form-label text-uppercase" for="username">Username</label>
+                                </div>
+
+                                <div class="form-outline mb-4">
+                                    <input type="password" id="password" name="password" class="form-control form-control-lg rounded-0" />
+                                    <label class="form-label text-uppercase" for="password">Password</label>
+                                </div>
+
+                                <div class="pt-1 mb-4">
+                                    <button class="btn btn-tickets" name="submit" type="submit">Login <i class="ri-arrow-right-s-line"></i></button>
+                                </div>
+
+                                <p class="small mb-5 pb-lg-2"><a class="text-muted" href="{% url 'register' %}">Don't have an account yet?</a></p>
+
+                            </form>
+
+                        </div>
+                        <p class="copyright mt-4 text-center">©2024 PICASSO EVENTOS. ALL RIGHTS RESERVED</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+</main>
+
+{% endblock %}

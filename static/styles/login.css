@@ -1,0 +1,17 @@
+.navbar-brand img {
+    /*height: 25px !important;*/
+}
+label {
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    font-size: 12px;
+}
+form {
+    box-shadow: 0 12px 34px 0 rgba(0,0,100,.05);
+}
+.copyright {
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-decoration: none;
+    text-transform: uppercase;
+}

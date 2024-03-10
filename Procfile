@@ -1,0 +1,1 @@
+web gunicorn picasso.wsgi:application --log-file -

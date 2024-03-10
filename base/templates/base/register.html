@@ -1,0 +1,140 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block content %}
+    {% include 'navbar.html' %}
+   <section style="background: url({% static 'images/bg_1.jpg' %}); margin-top: 4.7rem">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-2 text-center py-5">
+                <img src="{% static 'images/logo_white.png' %}" alt="" height="100">
+            </div>
+        </div>
+    </div>
+    </section>
+    <main>
+        <section class="mt-5">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-6 text-center mb-5">
+                        <h4 class="text-center title-1">YOUR PICASSO EVENTOS ACCOUNT</h4>
+                        <h4 class="text-center title-2 mt-4">Picasso Eventos User Account Registration</h4>
+                        <p class="text-white mt-4">
+                            By creating a Picasso Eventos Account, you will stay up-to-date with all Picasso Eventos related news. You can change your personal settings at any time once signed in to your account.
+                        </p>
+                    </div>
+                </div>
+
+                <form method="post" action="">
+
+                    {% csrf_token %}
+
+                    <div class="row justify-content-center">
+                        <div class="col-sm-8 text-black">
+                            <div class="d-flex align-items-center" >
+
+                                <div style="width: 38rem; background: #fff; border-top: #554cc7 solid 5px;" class="mx-auto p-5">
+                                    <span class="btn-tickets">ACCOUNT DETAILS</span>
+
+                                    <div class="form-outline my-4">
+                                        <input type="email" name="email" id="email" class="form-control form-control-lg rounded-0" />
+                                        <label class="form-label text-uppercase" for="email">Email</label>
+                                    </div>
+
+                                     <div class="form-outline my-4">
+                                        <input type="text" name="username" id="username" class="form-control form-control-lg rounded-0" />
+                                        <label class="form-label text-uppercase" for="username">Username</label>
+                                    </div>
+
+                                    <div class="form-outline mb-4">
+                                        <input type="password" name="password" id="password" class="form-control form-control-lg rounded-0" />
+                                        <label class="form-label text-uppercase" for="password">Password</label>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-sm-8 text-black mb-5">
+                            <div class="d-flex align-items-center mt-5 pt-5" >
+
+                                <div style="width: 38rem; background: #fff; border-top: #554cc7 solid 5px;" class="mx-auto p-5">
+                                    <span class="btn-tickets">YOUR DETAILS</span>
+
+                                    <div class="row mt-4">
+                                        <div class="col">
+                                            <!-- Name input -->
+                                            <div data-mdb-input-init class="form-outline">
+                                                <input type="text" name="first_name" id="first_name" class="form-control rounded-0" />
+                                                <label class="form-label" for="first_name">FIRST NAME</label>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <!-- Email input -->
+                                            <div data-mdb-input-init class="form-outline">
+                                                <input type="text" name="last_name" id="last_name" class="form-control rounded-0" />
+                                                <label class="form-label" for="last_name">LAST NAME</label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row mt-4">
+                                        <div class="col">
+                                            <!-- mobile input -->
+                                            <div data-mdb-input-init class="form-outline">
+                                                <input type="tel" name="mobile" id="mobile" class="form-control rounded-0" />
+                                                <label class="form-label" for="mobile">MOBILE NUMBER</label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+{#                                    <div class="row mt-4">#}
+{#                                        <div class="col">#}
+{#                                            <!-- Default radio -->#}
+{#                                            <div class="form-check">#}
+{#                                                <input class="form-check-input" type="radio" name="male" id="male"/>#}
+{#                                                <label class="form-check-label" for="male"> Male </label>#}
+{#                                            </div>#}
+{##}
+{#                                            <!-- Default checked radio -->#}
+{#                                            <div class="form-check">#}
+{#                                                <input class="form-check-input" type="radio" name="female" id="female" checked/>#}
+{#                                                <label class="form-check-label" for="female"> Female </label>#}
+{#                                            </div>#}
+{##}
+{#                                            <!-- Default checked radio -->#}
+{#                                            <div class="form-check">#}
+{#                                                <input class="form-check-input" type="radio" name="other" id="other" checked/>#}
+{#                                                <label class="form-check-label" for="other"> Other </label>#}
+{#                                            </div>#}
+{#                                        </div>#}
+{#                                    </div>#}
+
+{#                                    <div class="row mt-4">#}
+{#                                        <div class="col">#}
+{#                                            <div data-mdb-input-init class="form-check">#}
+{#                                                <input type="date" class="form-control rounded-0" name="date" id="date"/>#}
+{#                                                <label for="date">DATE OF BIRTH</label>#}
+{#                                            </div>#}
+{#                                        </div>#}
+{#                                    </div>#}
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-sm-8 text-center my-5">
+                            <button class="btn btn-tickets" name="submit" type="submit">CREATE ACCOUNT <i class="ri-arrow-right-s-line"></i></button>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Copyright -->
+    <p class="copyright text-center">©2023 PICASSO EVENTOS. ALL RIGHTS RESERVED</p>
+    <!-- Copyright -->
+
+{% endblock %}

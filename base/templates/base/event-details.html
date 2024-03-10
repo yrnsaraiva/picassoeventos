@@ -1,0 +1,50 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block content %}
+
+    {% include 'navbar.html' %}
+
+
+    <section class="min-vh-100 d-flex align-items-center">
+
+        <div class="container pt-5">
+
+            <div class="row justify-content-center g-5">
+                <div class="col-md-5 text-center">
+                    <img src="{{ event.cover_image.url }}" alt="" height="400">
+                </div>
+
+                <div class="col-md-5 col-10 d-flex align-items-center">
+                    <div class="text-white">
+                        <h1 class="fw-bold mb-3">Lote 01</h1>
+                        <h5 class="fw-bold">{{ event.name }}</h5>
+                        <p>{{ event.description }}</p>
+                        <small>{{ event.location }} | {{ event.date }}</small>
+
+                        <div class="my-5">
+                            {% if request.user.is_authenticated %}
+                                <a href="{{ event.ticket_link }}" class="btn-tickets" target="_blank">buy ticket</a>
+                            {% else %}
+                                <a href="{% url 'login' %}" class="btn-tickets">buy ticket</a>
+                            {% endif %}
+                        </div>
+                        <div class="my-5">
+                            {% if request.user.is_authenticated %}
+                                <a href="{{ event.ticket_link }}" class="btn-tickets" target="_blank">Book now</a>
+                            {% else %}
+                                <a href="{% url 'login' %}" class="btn-tickets">Book now</a>
+                            {% endif %}
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
+
+

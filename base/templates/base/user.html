@@ -1,0 +1,96 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block content %}
+
+
+    <div class="d-flex align-items-start p-5">
+        <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+            <a class="navbar-brand m-4 mx-auto" href="{% url 'index' %}">
+                <img src="{% static 'images/logo_white.png' %}" height="30px" alt="">
+            </a>
+
+            <button class="nav-link active rounded-0" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">Home</button>
+            <button class="nav-link rounded-0" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-tickets" type="button" role="tab" aria-controls="v-pills-tickets" aria-selected="false">Tickets</button>
+            <button class="nav-link rounded-0" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</button>
+
+            <small style="margin-top: 10rem">{{ user.email }}</small>
+            <a class="mt-3 mx-auto text-dark" href="{% url 'logout' %}" style="letter-spacing: 1px">Sign out</a>
+
+        </div>
+        <div class="tab-content mx-auto" id="v-pills-tabContent" style="width: 80%">
+          <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+              <div class="container">
+                <h5>Account Overview</h5>
+                <hr>
+                <p>
+                  This is your personal Picasso Events Account. You can update your personal settings and find more info about Picasso Events related topics.
+                </p>
+              </div>
+          </div>
+          <div class="tab-pane fade" id="v-pills-tickets" role="tabpanel" aria-labelledby="v-pills-tickets-tab">
+              <div class="container">
+                <h5>Tickets</h5>
+                <hr>
+
+
+
+              </div>
+          </div>
+          <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+              <div class="container">
+                <h5>Account</h5>
+                <hr>
+                <form class="mt-5" method="post" action="">
+
+
+                  <div class="row justify-content-center">
+                    <div class="col-sm-8 text-black">
+                      <div class="d-flex align-items-center" >
+
+                        <div style="width: 38rem; background: #fff; border-top: #554cc7 solid 5px;" class="mx-auto p-5">
+                            <span class="btn-tickets">DETAILS</span>
+                            <div class="row mt-4">
+                                <div class="col">
+                              <!-- Name input -->
+                              <div data-mdb-input-init class="form-outline">
+                                <input type="text" name="first_name" id="first_name" class="form-control rounded-0" value="{{ user.first_name }}" />
+                                <label class="form-label" for="first_name">FIRST NAME</label>
+                              </div>
+                            </div>
+                                <div class="col">
+                              <!-- Email input -->
+                              <div data-mdb-input-init class="form-outline">
+                                <input type="text" name="last_name" id="last_name" class="form-control rounded-0" value="{{ user.last_name }}" />
+                                <label class="form-label" for="last_name">LAST NAME</label>
+                              </div>
+                            </div>
+                            </div>
+
+
+                            <div class="form-outline my-4">
+                            <input type="email" name="email" id="email" class="form-control form-control-lg rounded-0" value="{{ user.email }}" />
+                            <label class="form-label text-uppercase" for="email">Email</label>
+                          </div>
+
+                            <div class="form-outline my-4">
+                            <input type="text" name="username" id="username" class="form-control form-control-lg rounded-0" value="{{ user.username }}" />
+                            <label class="form-label text-uppercase" for="username">Username</label>
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+
+                    <div class="col-sm-8 text-center my-5">
+                        <button class="btn btn-tickets" name="submit" type="submit">SAVE <i class="ri-arrow-right-s-line"></i></button>
+                    </div>
+
+                  </div>
+                </form>
+              </div>
+          </div>
+        </div>
+    </div>
+
+{% endblock %}
